@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/0d39bb13e6.js" crossorigin="anonymous"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {{>header}}
+    <section class="home-title">
+        <h1>HO4X</h1>
+        <h2>Modern, ultra fast, unbelievable cool keyboard Жора.</h2>
+    </section>
+    <section id="home-choose">
+        <div class="login-card">
+            <h2>Войдите</h2>
+            <div class="login-card-form">
+                <p>Войдите в аккаунт или же создайте новый, если вас ещё нет, чтобы сохранять все результаты.</p>
+                <div>
+                    <a href="/login"><button class="btn option">Войти</i></button></a>
+                    <a href="/register"><button class="btn ok">Создать</i></button></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-or"><h2>ИЛИ</h2></div>
+        <div class="mode-card">
+            <h2>Выберите режим</h2>
+            <div class="mode-card-form">
+                <button><a href="/words_ru">Русские слова</a></button>
+                <button><a href="/words_en">Английские слова</a></button>
+            </div>
+        </div>
+    </section>
+    <section id="home-choose-authorized">
+        <div class="mode-card">
+            <h2>Выберите режим</h2>
+            <div class="mode-card-form">
+                <button><a href="/words_ru">Русские слова</a></button>
+                <button><a href="/words_en">Английские слова</a></button>
+            </div>
+        </div>
+    </section>
+    {{>footer}}
+<script>
+    if (localStorage.getItem('session')) {
+        document.getElementById('home-choose-authorized').style.display = 'flex'
+        document.getElementById('home-choose').style.display = 'none'
+    }
+</script>
+</body>
+</html>

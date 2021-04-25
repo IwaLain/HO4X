@@ -1,0 +1,30 @@
+<header>
+    <a href="/"><h2>{{ title }}</h2></a>
+    <nav>
+        <div class="modes">
+            <button>Режим <i class="fas fa-caret-down"></i></button>
+            <div class="modes-content">
+                <a href="/words_ru">Русские слова</a>
+                <a href="/words_en">Английские слова</a>
+            </div>
+        </div>
+        <a href="/login"><button id="header-login-btn" class="btn option">Войти</button></a>
+        <button id="header-logout-btn" class="btn option">Выйти</button>
+    </nav>
+</header>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+if (localStorage.getItem('session')) {
+    document.getElementById('header-login-btn').style.display = 'none'
+    document.getElementById('header-logout-btn').style.display = 'inline-block'
+}
+
+const logoutBtn = document.getElementById('header-logout-btn')
+
+logoutBtn.addEventListener('click', async () => {
+    await axios.post('/api/user/logout')
+    localStorage.clear()
+    session = false
+    window.location.reload()
+})
+</script>

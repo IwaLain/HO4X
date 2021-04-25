@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {{>header}}
+    <div class="auth-form">
+        <h2>Вход</h2>
+        <div class="auth-fields">
+            <div class="auth-field">
+                <h3>Имя пользователя</h3>
+                <input id="login-username" type="text" placeholder="Введите имя...">
+            </div>
+            <div class="auth-field">
+                <h3>Пароль</h3>
+                <input id="login-password" type="password" placeholder="Введите пароль...">
+            </div>
+        </div>
+        <button id="login-user" class="btn ok">Войти</button>
+    </div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

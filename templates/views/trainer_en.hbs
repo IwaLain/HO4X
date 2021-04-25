@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/0d39bb13e6.js" crossorigin="anonymous"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div id="res-modal" class="modal">
+        <div class="modal-results">
+            <h2>Результаты</h2>
+            <div class="stat-row">
+                <span>Количество набранных слов:</span>
+                <span id="res-words-typed"></span>
+            </div>
+            <div class="stat-row">
+                <span>Количество ошибок:</span>
+                <span id="res-misspells"></span>
+            </div>
+            <div class="stat-row">
+                <span>Время:</span>
+                <span id="res-time"></span>
+            </div>
+            <div class="stat-row">
+                <span>Скорость набора (с/мин):</span>
+                <span id="res-cpm"></span>
+            </div>
+            <div class="modal-divider"></div>
+            <div>
+                <button id="res-again-btn" class="btn option">Заново <i class="fas fa-redo-alt"></i></button>
+                <button id="res-ok-btn" class="btn ok">ОК <i class="fas fa-check-circle"></i></button>
+            </div>
+            <div class="corner-stars">
+                <span>*</span>
+                <span>*</span>
+                <span>*</span>
+                <span>*</span>
+            </div>
+        </div>
+    </div>
+    {{>header}}
+    <main>
+        {{>stats}}
+        <section>
+            <div id="challenge-stats">
+                <span id="challenge-cpm">Скорость набора (с/мин): <span id="game-cpm">0</span></span>
+                <span id="challenge-time">Время: <span id="game-time">0:00</span></span>
+            </div>
+            <div>
+                <div id="input-field">
+                    <div id="printed-field">Нажмите Старт! чтобы начать...</div>
+                    <div id="input-cursor"></div>
+                    <div id="unprinted-field"></div>
+                </div>
+            </div>
+            <div class="challenge-btns">
+                <button id="challenge-start" class="btn ok">Старт!</button>
+                <button id="challenge-again" class="btn option">Заново <i class="fas fa-redo-alt"></i></button>
+                <button id="challenge-stop" class="btn reject">Стоп <i class="fas fa-stop-circle"></i></button>
+            </div>
+        </section>
+        <section>
+            <div class="keyboard-row">
+                <div id='Escape' class="keyboard-btn">Esc</div>
+                <div id='Backquote' class="keyboard-btn">`</div>
+                <div id='Digit1' class="keyboard-btn below">1</div>
+                <div id='Digit2' class="keyboard-btn below">2</div>
+                <div id='Digit3' class="keyboard-btn below">3</div>
+                <div id='Digit4' class="keyboard-btn below">4</div>
+                <div id='Digit5' class="keyboard-btn below">5</div>
+                <div id='Digit6' class="keyboard-btn below">6</div>
+                <div id='Digit7' class="keyboard-btn below">7</div>
+                <div id='Digit8' class="keyboard-btn below">8</div>
+                <div id='Digit9' class="keyboard-btn below">9</div>
+                <div id='Digit0' class="keyboard-btn below">0</div>
+                <div id='Minus' class="keyboard-btn">-</div>
+                <div id='Equal' class="keyboard-btn">=</div>
+                <div id='Backspace' class="keyboard-btn Backspace"><---</div>
+            </div>
+            <div class="keyboard-row">
+                <div id='Tab' class="keyboard-btn Tab">Tab</div>
+                <div id='KeyQ' class="keyboard-btn">q</div>
+                <div id='KeyW' class="keyboard-btn">w</div>
+                <div id='KeyE' class="keyboard-btn">e</div>
+                <div id='KeyR' class="keyboard-btn">r</div>
+                <div id='KeyT' class="keyboard-btn">t</div>
+                <div id='KeyY' class="keyboard-btn">y</div>
+                <div id='KeyU' class="keyboard-btn">u</div>
+                <div id='KeyI' class="keyboard-btn">i</div>
+                <div id='KeyO' class="keyboard-btn">o</div>
+                <div id='KeyP' class="keyboard-btn">p</div>
+                <div id='BracketLeft' class="keyboard-btn">{</div>
+                <div id='BracketRight' class="keyboard-btn">}</div>
+                <div id='Backslash' class="keyboard-btn">\</div>
+                <div id='Delete' class="keyboard-btn">Del</div>
+            </div>
+            <div class="keyboard-row">
+                <div id='CapsLock' class="keyboard-btn CapsLock">Caps Lock</div>
+                <div id='KeyA' class="keyboard-btn">a</div>
+                <div id='KeyS' class="keyboard-btn">s</div>
+                <div id='KeyD' class="keyboard-btn">d</div>
+                <div id='KeyF' class="keyboard-btn">f</div>
+                <div id='KeyG' class="keyboard-btn">g</div>
+                <div id='KeyH' class="keyboard-btn">h</div>
+                <div id='KeyJ' class="keyboard-btn">j</div>
+                <div id='KeyK' class="keyboard-btn">k</div>
+                <div id='KeyL' class="keyboard-btn">l</div>
+                <div id='Semicolon' class="keyboard-btn">;</div>
+                <div id='Quote' class="keyboard-btn">'</div>
+                <div id='Enter' class="keyboard-btn Enter">Enter</div>
+            </div>
+            <div class="keyboard-row">
+                <div id='ShiftLeft' class="keyboard-btn ShiftLeft">Shift</div>
+                <div id='KeyZ' class="keyboard-btn">z</div>
+                <div id='KeyX' class="keyboard-btn">x</div>
+                <div id='KeyC' class="keyboard-btn">c</div>
+                <div id='KeyV' class="keyboard-btn">v</div>
+                <div id='KeyB' class="keyboard-btn">b</div>
+                <div id='KeyN' class="keyboard-btn">n</div>
+                <div id='KeyM' class="keyboard-btn">m</div>
+                <div id='Comma' class="keyboard-btn">,</div>
+                <div id='Period' class="keyboard-btn">.</div>
+                <div id='Slash' class="keyboard-btn">/</div>
+                <div id='ArrowUp' class="keyboard-btn center"><i class="fas fa-chevron-up"></i></div>
+                <div id='ShiftRight' class="keyboard-btn ShiftRight">Shift</div>
+            </div>
+            <div class="keyboard-row">
+                <div id='Fn' class="keyboard-btn">Fn</div>
+                <div id='ControlLeft' class="keyboard-btn">Ctrl</div>
+                <div id='MetaLeft' class="keyboard-btn center"><i class="fab fa-windows"></i></div>
+                <div id='AltLeft' class="keyboard-btn">Alt</div>
+                <div id='Space' class="keyboard-btn Space"></div>
+                <div id='AltRight' class="keyboard-btn">Alt</div>
+                <div id='ControlRight' class="keyboard-btn">Ctrl</div>
+                <div id='ArrowLeft' class="keyboard-btn center"><i class="fas fa-chevron-left"></i></div>
+                <div id='ArrowDown' class="keyboard-btn center"><i class="fas fa-chevron-down"></i></div>
+                <div id='ArrowRight' class="keyboard-btn center"><i class="fas fa-chevron-right"></i></div>
+                <div id='ContextMenu' class="keyboard-btn center"><i class="fas fa-list-alt"></i></div>
+            </div>
+        </section>
+    </main>
+    {{>footer}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

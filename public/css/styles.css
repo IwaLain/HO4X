@@ -1,0 +1,609 @@
+@font-face {
+    font-family: 'Hardpixel';
+    src: url(../dos.ttf);
+}
+
+html {
+    --black: #121212;
+    --cyan: #C8FFF4;
+    --option: #03DAC5;
+    --ok: #1e88e5;
+    --reject: #CF6679;
+    font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Hardpixel';
+}
+
+body {
+    color: var(--black);
+    background-color: var(--black);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+main span, p, footer span {
+    color: white;
+}
+
+
+/* Buttons */
+.btn {
+    width: 155px;
+    height: 50px;
+    border-radius: 4px;
+    color: white;
+    font-size: 24px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.btn:active {
+    box-shadow: none !important;
+}
+
+.btn.ok {
+    background-color: var(--ok);
+}
+
+.btn.option {
+    background-color: var(--option);
+}
+
+.btn.reject {
+    background-color: var(--reject);
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cyan);
+    height: 70px;
+    padding: 0 80px;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+header .btn:hover {
+    box-shadow: 0 0 10px var(--black);
+}
+
+.modes {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.modes button {
+    background-color: transparent;
+    font-size: 28px;
+}
+
+.modes-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 250px;
+    box-shadow: 0 0 5px;
+    background-color: white;
+    z-index: 1;
+}
+
+.modes-content a {
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 20px;
+    padding: 15px 20px;
+}
+
+.modes:hover .modes-content {
+    display: block;
+}
+
+.modes-content a:hover {
+    background-color: var(--cyan);
+}
+
+#header-logout-btn {
+    display: none;
+}
+
+
+/* Footer */
+footer {
+    position: relative;
+}
+
+footer span {
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+
+
+/* Home page */
+.home-title {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.home-title > h1 {
+    margin-bottom: 30px;
+}
+
+#home-choose {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1150px;
+}
+
+#home-choose .btn:hover {
+    box-shadow: 0 0 10px var(--black);
+}
+
+.home-or {
+    padding: 180px 0;
+}
+
+.login-card {
+    width: 470px;
+}
+
+.login-card > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-card-form {
+    height: 300px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.login-card-form p {
+    color: var(--black);
+    overflow-wrap: break-word;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.login-card-form div {
+    margin-right: auto;
+    margin-left: auto;
+    width: 322px;
+}
+
+.mode-card-form {
+    padding: 90px 0;
+}
+
+.mode-card > h2 {
+    text-align: center;
+}
+
+.mode-card-form > button {
+    display: block;
+    width: 470px;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--black);
+    font-size: 36px;
+    text-align: center;
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+
+#home-choose-authorized {
+    display: none;
+    justify-content: center;
+}
+
+#home-choose-authorized h2 {
+    color: white;
+}
+
+
+/* Input */
+.aside-stats {
+    position: absolute;
+    top: 90px;
+    left: 20px;
+}
+
+main section:nth-child(2) {
+    margin-top: 80px;
+}
+
+main section:nth-child(2), main section:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1420px;
+}
+
+#challenge-stats {
+    margin-left: auto;
+    margin-right: auto;
+    width: 63vw;
+    max-width: 1420px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#challenge-time {
+    position: absolute;
+    right: 0;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#challenge-cpm {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#game-time, #game-cpm {
+    color: inherit;
+}
+
+#input-field {
+    margin-left: auto;
+    margin-right: auto;
+    width: 63vw;
+    max-width: 1420px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    white-space: pre;
+}
+
+#printed-field {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#input-cursor {
+    display: none;
+    border-right: 1px solid white;
+    height: 28px;
+}
+
+#unprinted-field {
+    color: white;
+    text-shadow: 0 0 2px white;
+}
+
+.challenge-btns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 325px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.challenge-btns button {
+    margin-right: 5px;
+}
+
+#challenge-again, #challenge-stop {
+    display: none;
+}
+
+#stats-numbers {
+    display: none;
+}
+
+/* Keyboard */
+.keyboard-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.keyboard-btn {
+    background-color: white;
+    margin-right: 10px;
+    width: 81px;
+    height: 60px;
+    font-size: 24px;
+    padding: 10px 0 0 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.keyboard-btn.below {
+    padding: 30px 10px 10px 60px;
+}
+
+.keyboard-btn.center {
+    padding: 18px 28px;
+}
+
+.keyboard-btn.Backspace, .keyboard-btn.Tab {
+    width: 160px;
+}
+
+.keyboard-btn.CapsLock {
+    width: 220px;
+}
+
+.keyboard-btn.Enter {
+    width: 200px;
+}
+
+.keyboard-btn.ShiftLeft {
+    width: 255px;
+}
+
+.keyboard-btn.ShiftRight {
+    width: 175px;
+}
+
+.keyboard-btn.Space {
+    width: 520px;
+}
+
+/* Results */
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+}
+
+.showModal {
+    opacity: 1;
+    z-index: 1337;
+    transition: opacity 0.3s ease;
+}
+
+.modal-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    padding: 30px;
+    position: relative;
+}
+
+.modal-results > h2 {
+    margin-bottom: 50px;
+    color: var(--ok);
+}
+
+.modal-results .btn:hover {
+    box-shadow: 0 0 10px var(--black);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    width: 640px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-divider {
+    width: 640px;
+    border-bottom: 1px solid var(--black);
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.corner-stars span {
+    position: absolute;
+}
+
+.corner-stars span:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+
+.corner-stars span:nth-child(2) {
+    top: 20px;
+    right: 20px;
+}
+
+.corner-stars span:nth-child(3) {
+    bottom: 20px;
+    left: 20px;
+}
+
+.corner-stars span:nth-child(4) {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+/* Login/reg form */
+.auth-form {
+    width: 500px;
+    height: 405px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 170px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.auth-form > h2 {
+    color: var(--ok);
+}
+
+.auth-form > .btn:hover {
+    box-shadow: 0 0 10px var(--black);
+}
+
+.auth-fields {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.auth-field > input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding-left: 10px;
+    margin: 10px 0 20px 0;
+    font-size: 1.3rem;
+}
+
+
+
+@media (max-width: 1420px) {
+h2 {
+    font-size: 1.5rem;
+}
+/* Home page */
+.home-title {
+    margin-top: 20px;
+}
+
+.home-choose {
+    width: 1000px;
+}
+
+.login-card {
+    width: 370px;
+}
+
+.login-card-form {
+    height: 250px;
+}
+
+.login-card-form p {
+    font-size: 1.5rem;
+}
+
+.home-or {
+    padding: 150px 0;
+}
+
+.mode-card-form {
+    padding: 60px 0;
+    margin-right: 0;
+}
+
+/* Keyboard */
+main section:nth-child(2), main section:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.keyboard-row {
+    margin-bottom: 7px;
+}
+
+.keyboard-btn {
+    font-size: 1rem;
+    margin-right: 7px;
+    width: 59px;
+    height: 43px;
+    padding: 7px 0 0 7px;
+}
+
+.keyboard-row .keyboard-btn:last-child {
+    margin-right: 0;
+}
+
+.keyboard-btn.below {
+    padding: 21px 7px 7px 35px;
+}
+
+.keyboard-btn.center {
+    padding: 13px 19px;
+}
+
+.keyboard-btn.Backspace, .keyboard-btn.Tab {
+    width: 114px;
+}
+
+.keyboard-btn.CapsLock {
+    width: 156px;
+}
+
+.keyboard-btn.Enter {
+    width: 142px;
+}
+
+.keyboard-btn.ShiftLeft {
+    width: 182px;
+}
+
+.keyboard-btn.ShiftRight {
+    width: 130px;
+}
+
+.keyboard-btn.Space {
+    width: 385px;
+}
+}
+
+@media (max-width: 1000px) {
+    
+}

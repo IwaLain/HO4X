@@ -1,0 +1,14 @@
+<section class="aside-stats">
+    <p>Привет, <span id="stats-username">Гость</span>.</p>
+    <div id="stats-numbers">
+        <p>Скорость набора (с/мин): <span id="stats-cpm">0</span></p>
+        <p>Общее время: <span id="stats-time">0:00</span></p>
+        <p>Набрано слов: <span id="stats-words">0</span></p>
+        <p>Ошибок: <span id="stats-misspells">0</span></p>
+    </div>
+<script>
+    if (localStorage.getItem('session')) {
+        document.getElementById('stats-numbers').style.display = 'block'
+    }
+</script>
+</section>
