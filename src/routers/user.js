@@ -76,8 +76,8 @@ router.patch('/api/user/stats', auth, async (req, res) => {
     stats.wordsTyped += req.body.resWords
     stats.misspells += req.body.misspells
     stats.totalTime += req.body.resTime
-    if (stats.cpm === null) stats.cpm = Math.floor(req.body.cpm)
-    else stats.cpm = Math.floor((stats.cpm + req.body.cpm) / 2)
+    stats.charsTyped += req.body.charsTyped
+    stats.cpm = Math.floor((stats.charsTyped / stats.totalTime) * 60)
 
     await req.user.save()
     res.send(req.user)

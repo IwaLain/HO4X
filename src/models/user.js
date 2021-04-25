@@ -37,6 +37,10 @@ const userSchema = new mongoose.Schema({
         misspells: {
             type: Number,
             default: 0
+        },
+        charsTyped: {
+            type: Number,
+            default: 0
         }
     }
 })

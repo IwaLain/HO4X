@@ -1,12 +1,13 @@
 {
-  "name": "h4ax",
+  "name": "ho4x",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
     "mongo": "C:\\Users\\Lain\\mongodb\\bin\\mongod.exe --dbpath=C:\\Users\\Lain\\mongodb-data"
   },
-  "author": "",
+  "author": "IwaLain",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
